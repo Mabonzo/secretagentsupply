@@ -8,6 +8,10 @@ h1, h2 {
   text-transform: uppercase;
   font-weight: bold;
 }
+h3 {
+  color: white;        /*NOTE find other h3s and make their colors deleted*/
+  background-color: black;
+}
 /**/
 header {
   display: flex;
@@ -29,32 +33,34 @@ header h1 {
   font-weight: normal
 }
 /**/
-#new-arrival {
+.new-arrival {
   display: flex;
+  flex-flow: column;
   justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 25rem;
   overflow: hidden;
 }
-#new-arrival img {
-  align-self: center;
+.new-arrival img {
+  align-self: flex-start;
   position: absolute;
   width: 100%;
   z-index: -10;
 }
-#new-arrival .container {
+.new-arrival .container {
   width: 960px;
   margin-top: 9rem;
 }
-#new-arrival .content {
-  width: 20rem;
+.new-arrival .content {        /*NOTE 26rem instead of 20rem because the redline rendered as if the padding wasn't apart of the 20rem*/
+  width: 26rem;
   background: black;
 }
-#new-arrival h1 {
+.new-arrival h1 {
   padding: 2rem 0 0.25rem 3rem;
 }
-#new-arrival h2 {
+.new-arrival h2 {
   font-size: 2rem;
   padding: 0 0 2rem 3rem;
 }
@@ -79,5 +85,71 @@ main {
   width: 100%;
 }
 main .container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
   width: 960px;
+}
+main .item {
+  border: 4px solid black;
+  width: 30%;
+}
+main .img-container {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12rem;
+}
+main img {
+  height: auto;
+  width: 100%;
+}
+main .text-container {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+main h3 {
+  color: white;
+  padding: 0.5rem;
+}
+/**/
+address {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+address .container {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  width: 960px;
+}
+address .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+}
+address .text-container {
+  width: 100%;
+}
+address h3 {
+  padding: 1rem 2rem 1rem 2rem;
+}
+/**/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  height: 5rem;
+  background-color: black;
+}
+footer .container {
+  width: 960px;
+}
+@media only screen and (max-width: 1024) {
+
 }
