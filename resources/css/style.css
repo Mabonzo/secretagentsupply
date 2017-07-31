@@ -12,6 +12,9 @@ h3 {
   color: white;        /*NOTE find other h3s and make their colors deleted*/
   background-color: black;
 }
+.container {
+  width: 960px;
+}
 /**/
 header {
   display: flex;
@@ -21,7 +24,6 @@ header {
 }
 header .container {
   display: flex;
-  width: 960px;
 }
 header img {
   margin: 0 1rem 0 0.5rem;
@@ -35,7 +37,6 @@ header h1 {
 /**/
 .new-arrival {
   display: flex;
-  flex-flow: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -43,14 +44,18 @@ header h1 {
   height: 25rem;
   overflow: hidden;
 }
-.new-arrival img {
-  align-self: flex-start;
+.new-arrival .img-container {
   position: absolute;
+  width: 100%;
+  height: 25rem;
+  left: 0;
+  z-index: -10;
+}
+.new-arrival img {
   width: 100%;
   z-index: -10;
 }
 .new-arrival .container {
-  width: 960px;
   margin-top: 9rem;
 }
 .new-arrival .content {        /*NOTE 26rem instead of 20rem because the redline rendered as if the padding wasn't apart of the 20rem*/
@@ -72,6 +77,9 @@ nav {
   background-color: firebrick;
   color: white;
 }
+nav h4 {
+  display: none;
+}
 nav ul {
   display: flex;
   width: 960px;
@@ -88,7 +96,6 @@ main .container {
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
-  width: 960px;
 }
 main .item {
   border: 4px solid black;
@@ -124,7 +131,6 @@ address .container {
   margin-top: 3rem;
   display: flex;
   justify-content: space-between;
-  width: 960px;
 }
 address .item {
   display: flex;
@@ -147,9 +153,98 @@ footer {
   height: 5rem;
   background-color: black;
 }
-footer .container {
-  width: 960px;
+@media only screen and (max-width: 1024px) {
+  /**/
+  html {
+    font-size: 16px;
+  }
+  .container {
+    width: 60rem;
+  }
+  /**/
+  .new-arrival img {
+    width: auto;
+    top: 0;
+  }
+  /**/
+  nav ul {
+    display: none;
+  }
+  nav h4 {
+    display: block;
+    margin: 0.75rem;
+  }
+  /**/
+  main .main-item-glasses {
+    display: none;
+  }
+  main .item {
+    width: 47%;
+  }
+  main img {
+    height: 100%;
+    width: auto;
+  }
 }
-@media only screen and (max-width: 1024) {
-
+@media only screen and (max-width: 470px) {
+  /**/
+  html {
+    font-size: 14px;
+  }
+  .container {
+    min-width: 200px;
+  }
+  /**/
+  .new-arrival {
+    height: 15rem;
+  }
+  .new-arrival .img-container {
+    height: 15rem;
+  }
+  .new-arrival img {
+    height: 20rem;
+    width: 100%;
+    min-width: 420px;
+  }
+  .new-arrival .container {
+    margin-top: 10rem;
+  }
+  .new-arrival .content {        /*NOTE 26rem instead of 20rem because the redline rendered as if the padding wasn't apart of the 20rem*/
+    width: 100%;
+    background: black;
+  }
+  .new-arrival h1 {
+    font-size: 0.77rem;
+    padding: 1rem 0 0.25rem 2rem;
+  }
+  .new-arrival h2 {
+    font-size: 1rem;
+    padding: 0 0 1rem 2rem;
+  }
+  /**/
+  main .container {
+    justify-content: center;
+  }
+  main .item {
+    width: 90%;
+  }
+  main .main-item-watch {
+    display: none;
+  }
+  /**/
+  address .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  address .item {
+    width: 90%;
+  }
+  address p {
+    margin-bottom: 0.5rem;
+  }
+  /**/
+  footer .container {
+    width: 100%;
+    text-align: center;
+  }
 }
